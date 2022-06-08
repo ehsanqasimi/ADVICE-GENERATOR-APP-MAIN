@@ -63,6 +63,17 @@ body{
     }
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+    color: $LightCyan;
+    a{
+        color: $LightCyan;
+        font-weight: 700;
+    }
+}
+
+
 @media screen and (max-width: 600px){
     .container{
         width: 90%;
