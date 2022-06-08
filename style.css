@@ -83,14 +83,15 @@ body {
   cursor: pointer;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    color: $LightCyan;
-    a{
-        color: $LightCyan;
-        font-weight: 700;
-    }
+footer {
+  position: absolute;
+  bottom: 0;
+  color: #cee3e9;
+}
+
+footer a {
+  color: #cee3e9;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {
