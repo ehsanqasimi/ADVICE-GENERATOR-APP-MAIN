@@ -1,0 +1,70 @@
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+
+$quoteSize: 28px; 
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $DarkBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container{
+    padding-block: 20px;
+    height: max-content;
+    width: 40%;
+    background-color: $DarkGrayishBlue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 30px;
+    .title{
+        color: $NeonGreen;
+        text-transform: uppercase;
+
+    }
+    .quote{
+        font-size: $quoteSize;
+        color: $LightCyan;
+        font-weight: bold;
+    }
+    .dice{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $NeonGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all ease 0.3s;
+        margin-bottom: -44px;
+        &:hover{
+            box-shadow: 0 0 15px 3px $NeonGreen;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        width: 90%;
+    }
+}
