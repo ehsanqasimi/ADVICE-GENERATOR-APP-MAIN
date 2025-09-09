@@ -2,95 +2,65 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #1f2632;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: hsl(218, 23%, 16%);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100vh;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 .container {
   padding-block: 20px;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 40%;
-  background-color: #323a49;
+  background-color: hsl(217, 19%, 24%);
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   gap: 20px;
   padding-inline: 30px;
 }
-
 .container .title {
-  color: #52ffa8;
+  color: hsl(150, 100%, 66%);
   text-transform: uppercase;
 }
-
 .container .quote {
   font-size: 28px;
-  color: #cee3e9;
+  color: hsl(193, 38%, 86%);
   font-weight: bold;
 }
-
 .container .dice {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #52ffa8;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: hsl(150, 100%, 66%);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all ease 0.3s;
+  justify-content: center;
+  align-items: center;
   transition: all ease 0.3s;
   margin-bottom: -44px;
 }
-
 .container .dice:hover {
-  -webkit-box-shadow: 0 0 15px 3px #52ffa8;
-          box-shadow: 0 0 15px 3px #52ffa8;
+  box-shadow: 0 0 15px 3px hsl(150, 100%, 66%);
   cursor: pointer;
 }
 
 footer {
   position: absolute;
   bottom: 0;
-  color: #cee3e9;
+  color: hsl(193, 38%, 86%);
 }
-
 footer a {
-  color: #cee3e9;
+  color: hsl(193, 38%, 86%);
   font-weight: 700;
 }
 
@@ -98,5 +68,4 @@ footer a {
   .container {
     width: 90%;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

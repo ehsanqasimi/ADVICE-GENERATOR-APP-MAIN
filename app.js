@@ -3,50 +3,49 @@ let quote = document.querySelector('.quote');
 let dice = document.querySelector('.dice');
 let divider = document.querySelector('.divider');
 
-// Add click event listener
 dice.addEventListener('click', changeQuote);
 
-// Initial load: fetch first quote
+// Initial load
 changeQuote();
 
 function changeQuote() {
-    // Prevent multiple rapid clicks
+    // 1. Show loading state
+    title.textContent = "Loading...";
+    quote.textContent = "Fetching new advice...";
     dice.style.cursor = 'wait';
-    dice.style.opacity = '0.7';
+    dice.style.opacity = '0.6';
 
-    fetch(`https://api.adviceslip.com/advice?_=${Date.now()}`)
+    // 2. Fetch new advice
+    fetch(`https://api.adviceslip.com/advice?_=${Date.now()}`) // 👈 Prevents caching
         .then(res => {
-            if (!res.ok) throw new Error('Failed to fetch advice');
+            if (!res.ok) throw new Error('Network response was not ok');
             return res.json();
         })
         .then(data => {
+            // 3. On success: show new advice
             title.textContent = "Advice #" + data.slip.id;
-            quote.textContent = data.slip.advice;
-
-            // Reset cursor after success
-            dice.style.cursor = 'pointer';
-            dice.style.opacity = '1';
+            quote.textContent = `"${data.slip.advice}"`; // Added quotes for style
         })
         .catch(err => {
-            console.error("Error fetching advice:", err);
+            // 4. On error: show error message
+            console.error('Fetch error:', err);
             title.textContent = "Error #0";
-            quote.textContent = "Oops! Something went wrong. Try again.";
+            quote.textContent = "Failed to load. Try again!";
+        })
+        .finally(() => {
+            // 5. Always reset dice state (success or error)
             dice.style.cursor = 'pointer';
             dice.style.opacity = '1';
         });
 }
 
-// Handle responsive divider
+// Divider responsive logic
 function updateDivider() {
-    if (window.innerWidth > 1000) {
-        divider.src = './images/pattern-divider-desktop.svg';
-    } else {
-        divider.src = './images/pattern-divider-mobile.svg';
-    }
+    divider.src = window.innerWidth > 1000
+        ? './images/pattern-divider-desktop.svg'
+        : './images/pattern-divider-mobile.svg';
 }
 
-// Run initially
 updateDivider();
-
-// Update on resize
 window.addEventListener('resize', updateDivider);
+
